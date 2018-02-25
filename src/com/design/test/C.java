@@ -8,5 +8,6 @@ public class C extends B {
         System.out.println(c.a);
         B c1 = new C();
         System.out.println(c1.a);
+        System.out.println("xixi");
     }
 }
