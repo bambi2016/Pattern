@@ -1,4 +1,4 @@
-# Pattern
+# 设计模式java源码
 本项目java代码是从这个拷贝下来的。网站地址：
 http://www.runoob.com/design-pattern/design-pattern-tutorial.html
 然后新建成一个java项目，这样方便在集成开发工具中演示。
