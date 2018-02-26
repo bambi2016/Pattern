@@ -6,3 +6,7 @@ http://www.runoob.com/design-pattern/design-pattern-tutorial.html
 
 # 学习心得：
 我觉得看这种经典代码就是了解一种思想，你这次看过，下载在看到别的具体实现的时候就更有思路。毕竟一切编程最重要的就是学习思想。
+<details>
+<summary>Copyright 2011.</summary>
+<p>All pages and graphics on this web site are the property of W3School.</p>
+</details>
