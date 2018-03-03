@@ -1,4 +1,4 @@
-<h3>设计模式java源码（33种）</h2>
+<h2>设计模式java源码（33种）</h2>
 本项目java代码是从这个拷贝下来的。网站地址：
 http://www.runoob.com/design-pattern/design-pattern-tutorial.html
 然后新建成一个java项目，这样方便在集成开发工具中演示。
