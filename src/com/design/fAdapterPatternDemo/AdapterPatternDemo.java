@@ -6,14 +6,17 @@ package com.design.fAdapterPatternDemo;
 interface MediaPlayer {
     public void play(String audioType, String fileName);
 }
+
 interface AdvancedMediaPlayer {
     public void playVlc(String fileName);
+
     public void playMp4(String fileName);
 }
-class VlcPlayer implements AdvancedMediaPlayer{
+
+class VlcPlayer implements AdvancedMediaPlayer {
     @Override
     public void playVlc(String fileName) {
-        System.out.println("Playing vlc file. Name: "+ fileName);
+        System.out.println("Playing vlc file. Name: " + fileName);
     }
 
     @Override
@@ -21,7 +24,8 @@ class VlcPlayer implements AdvancedMediaPlayer{
         //什么也不做
     }
 }
-class Mp4Player implements AdvancedMediaPlayer{
+
+class Mp4Player implements AdvancedMediaPlayer {
 
     @Override
     public void playVlc(String fileName) {
@@ -30,30 +34,32 @@ class Mp4Player implements AdvancedMediaPlayer{
 
     @Override
     public void playMp4(String fileName) {
-        System.out.println("Playing mp4 file. Name: "+ fileName);
+        System.out.println("Playing mp4 file. Name: " + fileName);
     }
 }
+
 class MediaAdapter implements MediaPlayer {
 
     AdvancedMediaPlayer advancedMusicPlayer;
 
-    public MediaAdapter(String audioType){
-        if(audioType.equalsIgnoreCase("vlc") ){
+    public MediaAdapter(String audioType) {
+        if (audioType.equalsIgnoreCase("vlc")) {
             advancedMusicPlayer = new VlcPlayer();
-        } else if (audioType.equalsIgnoreCase("mp4")){
+        } else if (audioType.equalsIgnoreCase("mp4")) {
             advancedMusicPlayer = new Mp4Player();
         }
     }
 
     @Override
     public void play(String audioType, String fileName) {
-        if(audioType.equalsIgnoreCase("vlc")){
+        if (audioType.equalsIgnoreCase("vlc")) {
             advancedMusicPlayer.playVlc(fileName);
-        }else if(audioType.equalsIgnoreCase("mp4")){
+        } else if (audioType.equalsIgnoreCase("mp4")) {
             advancedMusicPlayer.playMp4(fileName);
         }
     }
 }
+
 class AudioPlayer implements MediaPlayer {
     MediaAdapter mediaAdapter;
 
@@ -61,21 +67,21 @@ class AudioPlayer implements MediaPlayer {
     public void play(String audioType, String fileName) {
 
         //播放 mp3 音乐文件的内置支持
-        if(audioType.equalsIgnoreCase("mp3")){
-            System.out.println("Playing mp3 file. Name: "+ fileName);
+        if (audioType.equalsIgnoreCase("mp3")) {
+            System.out.println("Playing mp3 file. Name: " + fileName);
         }
         //mediaAdapter 提供了播放其他文件格式的支持
-        else if(audioType.equalsIgnoreCase("vlc")
-                || audioType.equalsIgnoreCase("mp4")){
+        else if (audioType.equalsIgnoreCase("vlc")
+                || audioType.equalsIgnoreCase("mp4")) {
             mediaAdapter = new MediaAdapter(audioType);
             mediaAdapter.play(audioType, fileName);
-        }
-        else{
-            System.out.println("Invalid media. "+
+        } else {
+            System.out.println("Invalid media. " +
                     audioType + " format not supported");
         }
     }
 }
+
 public class AdapterPatternDemo {
     public static void main(String[] args) {
         AudioPlayer audioPlayer = new AudioPlayer();

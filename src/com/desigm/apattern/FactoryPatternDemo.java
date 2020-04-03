@@ -71,5 +71,10 @@ public class FactoryPatternDemo {
 
         //调用 Square 的 draw 方法
         shape3.draw();
+        Shape shape4 = shapeFactory.getShape("SQARE");
+
+        //调用 Square 的 draw 方法
+        if (shape4!=null)
+            shape4.draw();
     }
 }

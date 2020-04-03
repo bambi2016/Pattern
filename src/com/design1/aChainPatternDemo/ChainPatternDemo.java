@@ -1,5 +1,8 @@
 package com.design1.aChainPatternDemo;
 
+/**
+ * 责任链模式
+ */
 
 abstract class AbstractLogger {
     public static int INFO = 1;
@@ -11,15 +14,15 @@ abstract class AbstractLogger {
     //责任链中的下一个元素
     protected AbstractLogger nextLogger;
 
-    public void setNextLogger(AbstractLogger nextLogger){
+    public void setNextLogger(AbstractLogger nextLogger) {
         this.nextLogger = nextLogger;
     }
 
-    public void logMessage(int level, String message){
-        if(this.level <= level){
+    public void logMessage(int level, String message) {
+        if (this.level <= level) {
             write(message);
         }
-        if(nextLogger !=null){
+        if (nextLogger != null) {
             nextLogger.logMessage(level, message);
         }
     }
@@ -27,9 +30,10 @@ abstract class AbstractLogger {
     abstract protected void write(String message);
 
 }
+
 class ConsoleLogger extends AbstractLogger {
 
-    public ConsoleLogger(int level){
+    public ConsoleLogger(int level) {
         this.level = level;
     }
 
@@ -38,9 +42,10 @@ class ConsoleLogger extends AbstractLogger {
         System.out.println("Standard Console::Logger: " + message);
     }
 }
+
 class ErrorLogger extends AbstractLogger {
 
-    public ErrorLogger(int level){
+    public ErrorLogger(int level) {
         this.level = level;
     }
 
@@ -49,9 +54,10 @@ class ErrorLogger extends AbstractLogger {
         System.out.println("Error Console::Logger: " + message);
     }
 }
+
 class FileLogger extends AbstractLogger {
 
-    public FileLogger(int level){
+    public FileLogger(int level) {
         this.level = level;
     }
 
@@ -60,9 +66,10 @@ class FileLogger extends AbstractLogger {
         System.out.println("File::Logger: " + message);
     }
 }
+
 public class ChainPatternDemo {
 
-    private static AbstractLogger getChainOfLoggers(){
+    private static AbstractLogger getChainOfLoggers() {
 
         AbstractLogger errorLogger = new ErrorLogger(AbstractLogger.ERROR);
         AbstractLogger fileLogger = new FileLogger(AbstractLogger.DEBUG);
@@ -82,6 +89,7 @@ public class ChainPatternDemo {
 
         loggerChain.logMessage(AbstractLogger.DEBUG,
                 "This is an debug level information.");
+        System.out.println();
 
         loggerChain.logMessage(AbstractLogger.ERROR,
                 "This is an error information.");

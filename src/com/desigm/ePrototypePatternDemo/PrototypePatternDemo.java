@@ -12,7 +12,7 @@ abstract class Shape implements Cloneable {
 
     abstract void draw();
 
-    public String getType(){
+    public String getType() {
         return type;
     }
 
@@ -37,7 +37,7 @@ abstract class Shape implements Cloneable {
 
 class Rectangle extends Shape {
 
-    public Rectangle(){
+    public Rectangle() {
         type = "Rectangle";
     }
 
@@ -49,7 +49,7 @@ class Rectangle extends Shape {
 
 class Square extends Shape {
 
-    public Square(){
+    public Square() {
         type = "Square";
     }
 
@@ -61,7 +61,7 @@ class Square extends Shape {
 
 class Circle extends Shape {
 
-    public Circle(){
+    public Circle() {
         type = "Circle";
     }
 
@@ -86,15 +86,15 @@ class ShapeCache {
     public static void loadCache() {
         Circle circle = new Circle();
         circle.setId("1");
-        shapeMap.put(circle.getId(),circle);
+        shapeMap.put(circle.getId(), circle);
 
         Square square = new Square();
         square.setId("2");
-        shapeMap.put(square.getId(),square);
+        shapeMap.put(square.getId(), square);
 
         Rectangle rectangle = new Rectangle();
         rectangle.setId("3");
-        shapeMap.put(rectangle.getId(),rectangle);
+        shapeMap.put(rectangle.getId(), rectangle);
     }
 }
 

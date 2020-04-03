@@ -1,6 +1,8 @@
 package com.design1.mMVCPatternDemo;
 
-
+/**
+ * MVC 模式
+ */
 class Student {
     private String rollNo;
     private String name;
@@ -50,7 +52,7 @@ class StudentController {
     }
 
     public void updateView(){
-        view.printStudentDetails(model.getName(), model.getRollNo());
+        view.printStudentDetails(getStudentName(), getStudentRollNo());
     }
 }
 public class MVCPatternDemo {

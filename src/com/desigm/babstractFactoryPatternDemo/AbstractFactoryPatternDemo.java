@@ -146,6 +146,7 @@ public class AbstractFactoryPatternDemo {
         //调用 Square 的 draw 方法
         shape3.draw();
 
+        System.out.println();
         //获取颜色工厂
         AbstractFactory colorFactory = FactoryProducer.getFactory("COLOR");
 

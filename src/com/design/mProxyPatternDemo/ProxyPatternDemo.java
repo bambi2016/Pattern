@@ -1,6 +1,8 @@
 package com.design.mProxyPatternDemo;
 
-
+/**
+ * 代理模式
+ */
 interface Image {
     void display();
 }
