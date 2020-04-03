@@ -17,10 +17,10 @@ class Stock {
 
     public void buy(){
         System.out.println("Stock [ Name: "+name+", " +
-                "Quantity: " + quantity +" ] bought");
+                "Quantity: " + quantity +" ] 买");
     }
     public void sell(){
-        System.out.println("Stock [ Name: "+name+", Quantity: " + quantity +" ] sold");
+        System.out.println("Stock [ Name: "+name+", Quantity: " + quantity +" ] 卖");
     }
 }
 class BuyStock implements Order {

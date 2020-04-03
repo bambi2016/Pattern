@@ -1,6 +1,8 @@
 package com.design1.cInterpreterPatternDemo;
 
-
+/**
+ * 解释器模式
+ */
 interface Expression {
     public boolean interpret(String context);
 }
