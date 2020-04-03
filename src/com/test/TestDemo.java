@@ -2,10 +2,10 @@ package com.test;
 
 public class TestDemo {
     public static void main(String[] args){
-        System.out.println("hehe");
-        TestDemo demo = new TestDemo();
-        boolean istrue = demo.istrue(true);
-        System.out.println(istrue);
+        A a = new A();
+        B b = new B();
+        b.fun1(a);
+        b.fun2(a);
     }
     boolean istrue(boolean b){
         if (istrue(b)!=true){

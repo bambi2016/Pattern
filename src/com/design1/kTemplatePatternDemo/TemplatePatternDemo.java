@@ -2,6 +2,12 @@ package com.design1.kTemplatePatternDemo;
 
 /**
  * 模板模式
+ * 在spring中有很多使用场景，
+ * 如获取springcontext对象
+ * 获取springboot environment对象，获取配置参数
+ * 还有在spring启动前执行的方法也是使用这个设计模式，
+ * 我之前一直困恼以为是执行子类的方法，其实就是简单的模板方法设计模式的实现！
+ *
  */
 abstract class Game {
     abstract void initialize();
