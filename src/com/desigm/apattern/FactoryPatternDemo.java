@@ -2,6 +2,7 @@ package com.desigm.apattern;
 
 /**
  * 工厂模式
+ * 创建型模式
  */
 interface Shape {
     void draw();

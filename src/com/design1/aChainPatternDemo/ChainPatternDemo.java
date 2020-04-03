@@ -2,6 +2,7 @@ package com.design1.aChainPatternDemo;
 
 /**
  * 责任链模式
+ * 行为型模式
  */
 
 abstract class AbstractLogger {

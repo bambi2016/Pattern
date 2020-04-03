@@ -2,6 +2,7 @@ package com.design1.cInterpreterPatternDemo;
 
 /**
  * 解释器模式
+ * files changed, 7 insertions(+), 6 deletions(-)
  */
 interface Expression {
     public boolean interpret(String context);
